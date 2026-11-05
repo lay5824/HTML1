@@ -1,0 +1,641 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>민준 ♥ 서연 결혼합니다</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #f7f3ee;
+    color: #554b45;
+    line-height: 1.8;
+}
+
+.container {
+    max-width: 480px;
+    margin: auto;
+    background: #fffdf9;
+    text-align: center;
+    overflow: hidden;
+}
+
+section {
+    padding: 65px 25px;
+}
+
+h2 {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    font-weight: 400;
+    color: #a88b69;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+.small-title {
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: #b49a7a;
+    margin-bottom: 15px;
+}
+
+/* 메인 */
+
+.hero {
+    padding: 0 0 45px;
+}
+
+.hero-photo {
+    width: 100%;
+    height: 570px;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-text {
+    padding: 35px 20px 0;
+}
+
+.hero-text h1 {
+    font-family: Georgia, serif;
+    font-size: 34px;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+.hero-text .heart {
+    color: #c99d9d;
+    padding: 0 10px;
+}
+
+.wedding-date {
+    margin-top: 20px;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+.venue {
+    font-size: 14px;
+    margin-top: 8px;
+    color: #8d8178;
+}
+
+/* 카운트다운 */
+
+.countdown {
+    background: #f8f3ed;
+    padding: 30px 10px;
+    color: #92795e;
+    font-size: 15px;
+}
+
+#timer {
+    font-size: 23px;
+    margin-top: 10px;
+}
+
+/* 인사말 */
+
+.greeting p {
+    font-size: 14px;
+    line-height: 2.2;
+    color: #756b63;
+}
+
+.signature {
+    margin-top: 25px;
+    font-size: 15px;
+}
+
+/* 갤러리 */
+
+.gallery {
+    background: #faf7f3;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 9px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.gallery-grid img:first-child {
+    grid-column: span 2;
+    height: 280px;
+}
+
+/* 영상 */
+
+.video-area video {
+    width: 100%;
+    border-radius: 5px;
+    background: #eee;
+}
+
+.bgm-button {
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: #a98c6d;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+/* 예식 안내 */
+
+.info {
+    background: #faf7f3;
+}
+
+.info-card {
+    border-top: 1px solid #e9dfd3;
+    padding: 20px 5px;
+    font-size: 14px;
+}
+
+.info-card strong {
+    display: block;
+    color: #a48665;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+/* 오시는 길 */
+
+.map {
+    width: 100%;
+    height: 260px;
+    border: 0;
+    background: #eee;
+}
+
+.map-links {
+    display: flex;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.map-links a {
+    flex: 1;
+    background: #a88b69;
+    color: white;
+    text-decoration: none;
+    padding: 12px 5px;
+    font-size: 13px;
+    border-radius: 4px;
+}
+
+.transport {
+    text-align: left;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.transport div {
+    border-bottom: 1px solid #eee5dc;
+    padding: 13px 0;
+}
+
+/* 연락처 */
+
+.contact {
+    background: #faf7f3;
+}
+
+.contact-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.contact-row a {
+    text-decoration: none;
+    border: 1px solid #c9b69f;
+    color: #8e775e;
+    padding: 8px 22px;
+    border-radius: 30px;
+    font-size: 13px;
+}
+
+/* 계좌 */
+
+.account-box {
+    text-align: left;
+    background: #f8f4ef;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.account-box button {
+    float: right;
+    background: #a88b69;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+/* 방명록 */
+
+.guestbook input,
+.guestbook textarea {
+    width: 100%;
+    padding: 13px;
+    margin: 7px 0;
+    border: 1px solid #e5dcd1;
+    background: white;
+    font-family: inherit;
+}
+
+.guestbook textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.guestbook button {
+    width: 100%;
+    padding: 13px;
+    background: #a88b69;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.message {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee5dc;
+    text-align: left;
+    font-size: 13px;
+}
+
+/* 푸터 */
+
+footer {
+    padding: 45px 15px;
+    background: #eee6dc;
+    color: #8b7764;
+    font-family: Georgia, serif;
+    font-size: 17px;
+}
+
+footer p {
+    font-family: sans-serif;
+    font-size: 12px;
+    margin-top: 12px;
+}
+
+/* 사진 확대 */
+
+#photoModal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+}
+
+#photoModal img {
+    width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+}
+
+@media(max-width:380px) {
+    .hero-photo { height: 470px; }
+    .hero-text h1 { font-size: 28px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- 메인 화면 -->
+<section class="hero">
+
+<img class="hero-photo"
+src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=1000"
+alt="신랑 신부 웨딩 사진">
+
+<div class="hero-text">
+<p class="small-title">WE ARE GETTING MARRIED</p>
+
+<h1>민준 <span class="heart">♥</span> 서연</h1>
+
+<p class="wedding-date">
+2026년 12월 19일 토요일 오후 2시
+</p>
+
+<p class="venue">
+라벨르 웨딩홀 · 그랜드볼룸 3층
+</p>
+
+<p class="venue">
+대구광역시 중구 달구벌대로 1234
+</p>
+</div>
+</section>
+
+<!-- 카운트다운 -->
+<div class="countdown">
+우리의 결혼식까지
+<div id="timer">D-DAY</div>
+</div>
+
+<!-- 인사말 -->
+<section class="greeting">
+<p class="small-title">INVITATION</p>
+<h2>소중한 분들을 초대합니다</h2>
+
+<p>
+서로 다른 길을 걸어온 두 사람이<br>
+이제 같은 길을 함께 걸어가려 합니다.<br><br>
+
+서로를 아끼고 사랑하며<br>
+작은 일에도 감사하는 부부가 되겠습니다.<br><br>
+
+저희의 새로운 시작을 축복해 주시면<br>
+큰 기쁨으로 간직하겠습니다.
+</p>
+
+<div class="signature">
+신랑 김민준 · 신부 이서연 드림
+</div>
+</section>
+
+<!-- 갤러리 -->
+<section class="gallery">
+<p class="small-title">OUR MOMENTS</p>
+<h2>Wedding Gallery</h2>
+
+<div class="gallery-grid">
+<img onclick="openPhoto(this)" src="https://images.unsplash.com/photo-1519741497674-611481863552?w=900" alt="웨딩 사진 1">
+<img onclick="openPhoto(this)" src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=700" alt="웨딩 사진 2">
+<img onclick="openPhoto(this)" src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?w=700" alt="웨딩 사진 3">
+<img onclick="openPhoto(this)" src="https://images.unsplash.com/photo-1529636798458-92182e662485?w=700" alt="웨딩 사진 4">
+<img onclick="openPhoto(this)" src="https://images.unsplash.com/photo-1520857014576-2c4f4c972b57?w=700" alt="웨딩 사진 5">
+</div>
+</section>
+
+<!-- 영상 -->
+<section class="video-area">
+<p class="small-title">OUR FILM</p>
+<h2>Wedding Video</h2>
+
+<video controls poster="https://images.unsplash.com/photo-1519741497674-611481863552?w=900">
+<source src="wedding.mp4" type="video/mp4">
+브라우저가 영상을 지원하지 않습니다.
+</video>
+
+<p style="font-size:12px;margin-top:10px;">
+두 사람의 소중한 순간을 담았습니다.
+</p>
+
+<audio id="bgm" loop>
+<source src="wedding.mp3" type="audio/mpeg">
+</audio>
+
+<button class="bgm-button" onclick="toggleMusic()">
+♪ BGM 재생 / 정지
+</button>
+</section>
+
+<!-- 예식 안내 -->
+<section class="info">
+<p class="small-title">WEDDING INFORMATION</p>
+<h2>예식 안내</h2>
+
+<div class="info-card">
+<strong>DATE & TIME</strong>
+2026년 12월 19일 토요일<br>
+오후 2시
+</div>
+
+<div class="info-card">
+<strong>LOCATION</strong>
+라벨르 웨딩홀<br>
+그랜드볼룸 3층
+</div>
+
+<div class="info-card">
+<strong>ADDRESS</strong>
+대구광역시 중구 달구벌대로 1234
+</div>
+</section>
+
+<!-- 오시는 길 -->
+<section>
+<p class="small-title">LOCATION</p>
+<h2>오시는 길</h2>
+
+<iframe
+class="map"
+src="https://maps.google.com/maps?q=Daegu%20Korea&t=&z=14&ie=UTF8&iwloc=&output=embed"
+loading="lazy">
+</iframe>
+
+<div class="map-links">
+<a href="https://map.naver.com/" target="_blank">네이버 지도</a>
+<a href="https://map.kakao.com/" target="_blank">카카오 지도</a>
+<a href="https://www.google.com/maps/search/?api=1&query=대구광역시+중구" target="_blank">내비게이션</a>
+</div>
+
+<div class="transport">
+<div>
+<strong>🚇 지하철</strong><br>
+중앙로역 2번 출구에서 도보 7분
+</div>
+
+<div>
+<strong>🚌 버스</strong><br>
+중앙로 정류장 하차 후 도보 5분
+</div>
+
+<div>
+<strong>🚗 주차 안내</strong><br>
+웨딩홀 지하주차장 이용 가능<br>
+하객 무료 주차 2시간<br>
+만차 시 인근 제휴 주차장 이용
+</div>
+</div>
+</section>
+
+<!-- 연락처 -->
+<section class="contact">
+<p class="small-title">CONTACT</p>
+<h2>마음 전하기</h2>
+
+<p>신랑 · 신부에게 연락하기</p>
+
+<div class="contact-row">
+<a href="tel:01012345678">신랑 연락</a>
+<a href="tel:01098765432">신부 연락</a>
+</div>
+
+<br>
+
+<p>양가 혼주 연락처</p>
+<div class="contact-row">
+<a href="tel:01011112222">신랑측 혼주</a>
+<a href="tel:01033334444">신부측 혼주</a>
+</div>
+</section>
+
+<!-- 계좌번호 -->
+<section>
+<p class="small-title">ACCOUNT</p>
+<h2>마음 전하실 곳</h2>
+
+<p style="font-size:13px;">
+축하의 마음을 전하고 싶으신 분들을 위해<br>
+계좌번호를 안내드립니다.
+</p>
+
+<div class="account-box">
+<strong>신랑 김민준</strong><br>
+국민은행 123456-78-901234
+<button onclick="copyAccount('12345678901234')">복사</button>
+</div>
+
+<div class="account-box">
+<strong>신부 이서연</strong><br>
+신한은행 110-123-456789
+<button onclick="copyAccount('110123456789')">복사</button>
+</div>
+</section>
+
+<!-- 방명록 -->
+<section class="guestbook">
+<p class="small-title">GUEST BOOK</p>
+<h2>축하 메시지</h2>
+
+<input id="guestName" placeholder="이름을 입력하세요">
+
+<textarea id="guestMessage" placeholder="축하 메시지를 남겨주세요"></textarea>
+
+<button onclick="addMessage()">메시지 남기기</button>
+
+<div id="messageList"></div>
+</section>
+
+<footer>
+With Love ♥
+<p>김민준 ♥ 이서연</p>
+<p>2026. 12. 19</p>
+<p>소중한 걸음 해주셔서 감사합니다.</p>
+</footer>
+
+</div>
+
+<!-- 사진 확대 모달 -->
+<div id="photoModal" onclick="closePhoto()">
+<img id="modalImage" alt="확대된 웨딩 사진">
+</div>
+
+<script>
+
+// 결혼식 카운트다운
+function updateTimer() {
+    const wedding = new Date("2026-12-19T14:00:00").getTime();
+    const now = new Date().getTime();
+    const distance = wedding - now;
+
+    if (distance < 0) {
+        document.getElementById("timer").innerText = "오늘은 우리의 결혼식입니다 ♥";
+        return;
+    }
+
+    const days = Math.floor(distance / (1000*60*60*24));
+    const hours = Math.floor((distance / (1000*60*60)) % 24);
+    const minutes = Math.floor((distance / (1000*60)) % 60);
+
+    document.getElementById("timer").innerText =
+        `D-${days} · ${hours}시간 ${minutes}분`;
+}
+
+updateTimer();
+setInterval(updateTimer, 60000);
+
+// 사진 확대
+function openPhoto(img) {
+    document.getElementById("modalImage").src = img.src;
+    document.getElementById("photoModal").style.display = "flex";
+}
+
+function closePhoto() {
+    document.getElementById("photoModal").style.display = "none";
+}
+
+// BGM
+function toggleMusic() {
+    const music = document.getElementById("bgm");
+
+    if (music.paused) {
+        music.play().catch(() => alert("음악 파일을 확인해 주세요."));
+    } else {
+        music.pause();
+    }
+}
+
+// 계좌번호 복사
+function copyAccount(account) {
+    navigator.clipboard.writeText(account)
+    .then(() => alert("계좌번호가 복사되었습니다."))
+    .catch(() => alert("복사할 수 없습니다."));
+}
+
+// 방명록
+function addMessage() {
+    const name = document.getElementById("guestName").value.trim();
+    const message = document.getElementById("guestMessage").value.trim();
+
+    if (!name || !message) {
+        alert("이름과 메시지를 입력해 주세요.");
+        return;
+    }
+
+    const item = document.createElement("div");
+    item.className = "message";
+
+    const title = document.createElement("strong");
+    title.textContent = name + " ♥";
+
+    const content = document.createElement("p");
+    content.textContent = message;
+
+    item.append(title, content);
+
+    document.getElementById("messageList").prepend(item);
+
+    document.getElementById("guestName").value = "";
+    document.getElementById("guestMessage").value = "";
+}
+
+</script>
+
+</body>
+</html>

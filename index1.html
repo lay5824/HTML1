@@ -1,0 +1,524 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>대명효성주간보호센터</title>
+
+<style>
+/* 기본 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    font-family: "Malgun Gothic", sans-serif;
+    color: #333;
+    line-height: 1.7;
+    background: #f8fbfd;
+}
+
+/* 상단 고정 메뉴 */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255,255,255,0.96);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: bold;
+    color: #2788bd;
+}
+
+.menu {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #444;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #249bd1;
+}
+
+/* 공통 섹션 */
+section {
+    padding: 90px 20px;
+    scroll-margin-top: 65px;
+}
+
+.container {
+    max-width: 1150px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    color: #247eae;
+    margin-bottom: 15px;
+}
+
+.section-desc {
+    text-align: center;
+    color: #777;
+    margin-bottom: 45px;
+}
+
+/* 메인 화면 */
+#home {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #e2f4fc, #f4faff, #d8effb);
+    padding-top: 120px;
+}
+
+.hero-content h1 {
+    font-size: 43px;
+    color: #176d9d;
+    margin-bottom: 22px;
+}
+
+.hero-content p {
+    font-size: 19px;
+    color: #536d7b;
+    margin-bottom: 30px;
+}
+
+.main-btn {
+    display: inline-block;
+    background: #278fc2;
+    color: white;
+    padding: 13px 32px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.main-btn:hover {
+    background: #176d9d;
+    transform: translateY(-3px);
+}
+
+/* 센터 소개 */
+#about {
+    background: white;
+}
+
+.about-box {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background: #f0f8fc;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.about-icon {
+    font-size: 85px;
+    min-width: 120px;
+    text-align: center;
+}
+
+.about-text h3 {
+    font-size: 25px;
+    color: #247eae;
+    margin-bottom: 15px;
+}
+
+/* 이용 안내 */
+#guide {
+    background: #f3f9fc;
+}
+
+.guide-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.guide-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.guide-card h3 {
+    color: #247eae;
+    margin-bottom: 10px;
+}
+
+/* 프로그램 카드 */
+#program {
+    background: white;
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.program-card {
+    background: #f5faff;
+    border-radius: 18px;
+    overflow: hidden;
+    padding: 30px 25px;
+    border: 1px solid #e1eff7;
+    transition: 0.3s;
+}
+
+.program-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 8px 22px rgba(40,130,180,0.13);
+}
+
+.program-icon {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.program-card h3 {
+    color: #247eae;
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.program-card p {
+    color: #666;
+    font-size: 15px;
+}
+
+/* 소식 */
+#news {
+    background: #edf6fb;
+}
+
+.news-box {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.news-item {
+    padding: 18px 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.news-item:last-child {
+    border-bottom: none;
+}
+
+.news-item strong {
+    color: #247eae;
+    margin-right: 15px;
+}
+
+/* 문의 */
+#contact {
+    background: white;
+    text-align: center;
+}
+
+.contact-box {
+    background: #eaf6fc;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.contact-box h3 {
+    font-size: 25px;
+    color: #247eae;
+    margin-bottom: 15px;
+}
+
+.contact-box p {
+    margin: 8px 0;
+}
+
+/* 푸터 */
+footer {
+    background: #246b91;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    font-size: 14px;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .menu {
+        gap: 13px;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 13px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .hero-content h1 {
+        font-size: 29px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .about-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+
+    .guide-grid,
+    .program-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 27px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 상단 메뉴 -->
+<header>
+    <nav>
+        <div class="logo">대명효성주간보호센터</div>
+
+        <ul class="menu">
+            <li><a href="#home">홈</a></li>
+            <li><a href="#about">소개</a></li>
+            <li><a href="#guide">이용안내</a></li>
+            <li><a href="#program">프로그램</a></li>
+            <li><a href="#news">소식</a></li>
+            <li><a href="#contact">문의하기</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- 메인 화면 -->
+<section id="home">
+    <div class="hero-content">
+        <h1>대명효성주간보호센터에<br>오신 것을 환영합니다</h1>
+
+        <p>
+            어르신의 행복한 하루, 가족의 편안한 마음<br>
+            사랑과 정성으로 함께하겠습니다.
+        </p>
+
+        <a href="#about" class="main-btn">센터 알아보기</a>
+    </div>
+</section>
+
+<!-- 센터 소개 -->
+<section id="about">
+    <div class="container">
+        <h2 class="section-title">센터 소개</h2>
+        <p class="section-desc">
+            어르신의 건강하고 행복한 일상을 함께 만들어갑니다.
+        </p>
+
+        <div class="about-box">
+            <div class="about-icon">🏡</div>
+
+            <div class="about-text">
+                <h3>노인주간보호센터란?</h3>
+                <p>
+                    노인주간보호센터는 혼자 일상생활을 하기 어려운
+                    어르신들이 낮 시간 동안 센터를 이용하며
+                    다양한 돌봄과 전문적인 서비스를 제공받는 곳입니다.
+                </p>
+                <p>
+                    건강관리, 식사 지원, 신체활동, 인지 프로그램 등을 통해
+                    어르신의 건강과 삶의 질 향상을 돕고
+                    가족의 돌봄 부담을 덜어드립니다.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 이용 안내 -->
+<section id="guide">
+    <div class="container">
+        <h2 class="section-title">이용 안내</h2>
+        <p class="section-desc">
+            어르신에게 필요한 돌봄 서비스를 제공합니다.
+        </p>
+
+        <div class="guide-grid">
+            <div class="guide-card">
+                <h3>이용 대상</h3>
+                <p>장기요양등급을 인정받은 어르신 등</p>
+            </div>
+
+            <div class="guide-card">
+                <h3>이용 시간</h3>
+                <p>센터 운영시간에 따른 주간 돌봄 서비스</p>
+            </div>
+
+            <div class="guide-card">
+                <h3>이용 상담</h3>
+                <p>전화 및 방문 상담을 통해 이용 절차 안내</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 프로그램 소개 -->
+<section id="program">
+    <div class="container">
+        <h2 class="section-title">주요 서비스 및 프로그램</h2>
+        <p class="section-desc">
+            건강과 활력을 위한 다양한 맞춤형 서비스를 운영합니다.
+        </p>
+
+        <div class="program-grid">
+
+            <div class="program-card">
+                <div class="program-icon">🩺</div>
+                <h3>보건 & 의료 서비스</h3>
+                <p>
+                    혈압 및 건강 상태 확인, 투약 관리,
+                    건강 상담 등 어르신의 건강한 생활을 지원합니다.
+                </p>
+            </div>
+
+            <div class="program-card">
+                <div class="program-icon">🏃</div>
+                <h3>신체기능 프로그램</h3>
+                <p>
+                    스트레칭, 근력 운동, 균형 운동 등
+                    신체기능 유지와 일상생활 능력 향상을 돕습니다.
+                </p>
+            </div>
+
+            <div class="program-card">
+                <div class="program-icon">🧩</div>
+                <h3>인지기능 프로그램</h3>
+                <p>
+                    기억력 훈련, 퍼즐, 회상 활동 등
+                    인지기능 유지와 두뇌 활성화를 지원합니다.
+                </p>
+            </div>
+
+            <div class="program-card">
+                <div class="program-icon">🎨</div>
+                <h3>맞춤형 인지 프로그램</h3>
+                <p>
+                    어르신의 인지 수준과 흥미를 고려한
+                    미술, 음악, 만들기 등 다양한 활동을 진행합니다.
+                </p>
+            </div>
+
+            <div class="program-card">
+                <div class="program-icon">🛁</div>
+                <h3>위생 관리 서비스</h3>
+                <p>
+                    세면, 목욕, 구강 관리, 개인위생 지원 등
+                    청결하고 쾌적한 생활을 돕습니다.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- 센터 소식 -->
+<section id="news">
+    <div class="container">
+        <h2 class="section-title">센터 소식</h2>
+        <p class="section-desc">
+            센터의 다양한 활동과 소식을 확인하세요.
+        </p>
+
+        <div class="news-box">
+            <div class="news-item">
+                <strong>공지사항</strong>
+                <span>센터 이용 및 운영 안내</span>
+            </div>
+
+            <div class="news-item">
+                <strong>프로그램</strong>
+                <span>어르신들의 즐거운 활동 이야기</span>
+            </div>
+
+            <div class="news-item">
+                <strong>행사소식</strong>
+                <span>생신잔치 및 특별 행사 안내</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 문의하기 -->
+<section id="contact">
+    <div class="container">
+        <h2 class="section-title">문의하기</h2>
+        <p class="section-desc">
+            궁금한 점이 있으시면 언제든지 문의해 주세요.
+        </p>
+
+        <div class="contact-box">
+            <h3>대명효성주간보호센터</h3>
+            <p>📞 전화번호 : 센터 연락처 입력</p>
+            <p>📍 주소 : 센터 주소 입력</p>
+            <p>💙 어르신의 행복한 하루를 위해 정성을 다하겠습니다.</p>
+        </div>
+    </div>
+</section>
+
+<!-- 하단 -->
+<footer>
+    <p>© 2026 대명효성주간보호센터. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

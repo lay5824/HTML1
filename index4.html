@@ -1,0 +1,315 @@
+```html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>대명효성주간보호센터</title>
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Malgun Gothic", sans-serif;
+  color: #333;
+  line-height: 1.7;
+  background: #fff;
+}
+header {
+  background: white;
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 10px #00000012;
+}
+.logo { font-size: 22px; font-weight: bold; color: #287c75; }
+nav { display: flex; gap: 25px; }
+nav a { text-decoration: none; color: #444; font-weight: bold; }
+nav a:hover { color: #287c75; }
+
+.hero {
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  color: white;
+  background:
+    linear-gradient(#173d3c88, #173d3c88),
+    url("https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1800&q=85")
+    center/cover no-repeat;
+}
+.hero h1 { font-size: 40px; margin-bottom: 18px; }
+.hero p { font-size: 20px; }
+.hero .btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 28px;
+  background: #fff;
+  color: #287c75;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+section { padding: 75px 8%; scroll-margin-top: 80px; }
+.section-title {
+  text-align: center;
+  font-size: 30px;
+  color: #287c75;
+  margin-bottom: 15px;
+}
+.section-desc {
+  text-align: center;
+  color: #777;
+  margin-bottom: 40px;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.intro img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+.intro h3 { font-size: 25px; color: #287c75; margin-bottom: 15px; }
+
+.programs {
+  background: #f3f8f7;
+}
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+.card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px #0000000d;
+}
+.card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+}
+.card-content { padding: 20px; }
+.card h3 { color: #287c75; font-size: 20px; margin-bottom: 8px; }
+.card p { color: #666; font-size: 15px; }
+
+.schedule-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+.schedule-box {
+  border: 2px solid #dcece9;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.schedule-box h3 {
+  background: #287c75;
+  color: white;
+  padding: 13px;
+  text-align: center;
+  font-size: 21px;
+}
+.schedule-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 18px;
+  border-bottom: 1px solid #eee;
+}
+.schedule-item:last-child { border-bottom: none; }
+.schedule-item strong { color: #287c75; }
+
+.info {
+  background: #f3f8f7;
+  text-align: center;
+}
+.info h3 { color: #287c75; margin-bottom: 15px; }
+.info p { margin: 7px; }
+
+footer {
+  background: #285c58;
+  color: white;
+  text-align: center;
+  padding: 30px 15px;
+  font-size: 14px;
+}
+
+@media(max-width: 768px) {
+  header { flex-direction: column; gap: 12px; }
+  nav { gap: 12px; flex-wrap: wrap; justify-content: center; }
+  nav a { font-size: 14px; }
+  .hero h1 { font-size: 29px; }
+  .intro, .schedule-wrap { grid-template-columns: 1fr; }
+  .program-grid { grid-template-columns: 1fr 1fr; }
+  section { padding: 55px 6%; }
+}
+@media(max-width: 480px) {
+  .program-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">대명효성주간보호센터</div>
+  <nav>
+    <a href="#intro">센터소개</a>
+    <a href="#program">프로그램</a>
+    <a href="#schedule">하루일정</a>
+    <a href="#info">이용안내</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div>
+    <h1>대명효성주간보호센터에<br>오신 것을 환영합니다</h1>
+    <p>어르신의 행복한 하루와 가족의 안심을 함께합니다.</p>
+    <a href="#intro" class="btn">센터 알아보기</a>
+  </div>
+</div>
+
+<section id="intro">
+  <h2 class="section-title">센터 소개</h2>
+  <p class="section-desc">사랑과 정성으로 어르신의 하루를 함께합니다.</p>
+
+  <div class="intro">
+    <img
+      src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1000&q=85"
+      alt="센터 소개 사진">
+    <div>
+      <h3>따뜻한 마음으로 모시겠습니다</h3>
+      <p>
+        대명효성주간보호센터는 어르신들이 낮 시간 동안
+        안전하고 즐겁게 생활하실 수 있도록 돕는 공간입니다.
+      </p>
+      <p>
+        전문적인 돌봄과 다양한 프로그램을 통해
+        신체적·정서적 건강을 함께 살피겠습니다.
+      </p>
+      <p><strong>원장 인사말</strong></p>
+      <p>어르신 한 분 한 분을 가족처럼 소중히 모시겠습니다.</p>
+    </div>
+  </div>
+</section>
+
+<section id="program" class="programs">
+  <h2 class="section-title">주요 프로그램</h2>
+  <p class="section-desc">건강하고 즐거운 일상을 위한 다양한 서비스</p>
+
+  <div class="program-grid">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=85" alt="송영서비스">
+      <div class="card-content">
+        <h3>송영서비스</h3>
+        <p>안전하고 편안하게 센터까지 모시고 귀가를 도와드립니다.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=85" alt="신체활동 프로그램">
+      <div class="card-content">
+        <h3>신체활동 프로그램</h3>
+        <p>건강 체조와 신체활동으로 활기찬 생활을 지원합니다.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=85" alt="인지활동 프로그램">
+      <div class="card-content">
+        <h3>인지활동 프로그램</h3>
+        <p>다양한 인지활동으로 기억력과 집중력 향상을 돕습니다.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=85" alt="여가 및 정서활동">
+      <div class="card-content">
+        <h3>여가 및 정서활동</h3>
+        <p>노래와 놀이, 소통을 통해 즐거운 시간을 만듭니다.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=85" alt="맞춤형 강사 프로그램">
+      <div class="card-content">
+        <h3>맞춤형 강사 프로그램</h3>
+        <p>전문 강사와 함께하는 다양한 맞춤형 활동을 제공합니다.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=85" alt="의료보건서비스">
+      <div class="card-content">
+        <h3>의료보건서비스</h3>
+        <p>건강 상태를 살피고 어르신의 건강관리를 지원합니다.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=85" alt="맛있는 식사">
+      <div class="card-content">
+        <h3>맛있는 식사</h3>
+        <p>균형 잡힌 식사와 간식으로 건강한 하루를 돕습니다.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="schedule">
+  <h2 class="section-title">하루 일정</h2>
+  <p class="section-desc">규칙적이고 편안한 하루를 보내실 수 있습니다.</p>
+
+  <div class="schedule-wrap">
+    <div class="schedule-box">
+      <h3>오전 일정</h3>
+      <div class="schedule-item"><strong>08:00~10:00</strong><span>등원 및 건강 확인</span></div>
+      <div class="schedule-item"><strong>10:00~11:00</strong><span>오전 간식 및 휴식</span></div>
+      <div class="schedule-item"><strong>11:00~12:00</strong><span>신체·인지활동</span></div>
+      <div class="schedule-item"><strong>12:00~13:00</strong><span>점심 식사</span></div>
+    </div>
+
+    <div class="schedule-box">
+      <h3>오후 일정</h3>
+      <div class="schedule-item"><strong>13:00~14:00</strong><span>휴식 및 여가활동</span></div>
+      <div class="schedule-item"><strong>14:00~15:00</strong><span>맞춤형 프로그램</span></div>
+      <div class="schedule-item"><strong>15:00~16:00</strong><span>오후 간식 및 활동</span></div>
+      <div class="schedule-item"><strong>16:00~18:00</strong><span>귀가 준비 및 송영</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="info" class="info">
+  <h2 class="section-title">이용 안내 및 오시는 길</h2>
+  <h3>대명효성주간보호센터</h3>
+  <p>주소 : 대구광역시 남구 두류공원로 71, 2층</p>
+  <p>전화 : 053-656-1500</p>
+  <p>휴대전화 : 010-2922-1500</p>
+  <p>상담 및 이용 문의는 전화로 연락해 주세요.</p>
+</section>
+
+<footer>
+  <p>대명효성주간보호센터</p>
+  <p>어르신의 행복한 하루를 위해 정성을 다하겠습니다.</p>
+</footer>
+
+</body>
+</html>
+```

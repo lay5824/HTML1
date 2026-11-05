@@ -1,0 +1,420 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>최고의 진리, 성경</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    font-family: 'Malgun Gothic', sans-serif;
+    background: #faf8f2;
+    color: #292b35;
+    line-height: 1.7;
+}
+
+/* 상단 메뉴 */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #172b43;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    box-shadow: 0 3px 12px #0002;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #e6c77a;
+}
+
+/* 공통 영역 */
+section {
+    padding: 80px 8%;
+    scroll-margin-top: 75px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 34px;
+    color: #263c58;
+    margin-bottom: 35px;
+}
+
+/* 메인 화면 */
+.hero {
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background:
+        linear-gradient(#172b4377, #172b4399),
+        url('https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=1600&q=85')
+        center/cover;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 46px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    max-width: 750px;
+}
+
+.hero .highlight {
+    color: #f3d78e;
+}
+
+/* 개요 */
+.overview {
+    text-align: center;
+    background: #fff;
+}
+
+.overview p {
+    max-width: 850px;
+    margin: auto;
+    font-size: 19px;
+}
+
+/* 성경 소개 */
+.book-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 950px;
+    margin: auto;
+}
+
+.book-card {
+    background: white;
+    border-radius: 15px;
+    padding: 35px;
+    text-align: center;
+    border-top: 5px solid #c4a45b;
+    box-shadow: 0 5px 18px #0000000d;
+}
+
+.book-card h3 {
+    font-size: 26px;
+    color: #263c58;
+    margin-bottom: 15px;
+}
+
+/* 예수님과 제자 */
+.disciples {
+    background: #f0ede4;
+}
+
+.disciples-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.person-card {
+    background: white;
+    border-radius: 13px;
+    padding: 25px 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px #0000000c;
+    transition: 0.3s;
+}
+
+.person-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 8px 20px #0002;
+}
+
+.person-card .symbol {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.person-card h3 {
+    color: #263c58;
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.person-card p {
+    font-size: 15px;
+    color: #666;
+}
+
+/* 기도문 */
+.prayer {
+    background: #fff;
+    text-align: center;
+}
+
+.prayer-box {
+    max-width: 750px;
+    margin: auto;
+    padding: 40px;
+    background: #f5f0e4;
+    border-radius: 15px;
+    font-size: 19px;
+}
+
+/* 문의하기 */
+.contact {
+    text-align: center;
+    background: #e9e4d8;
+}
+
+.contact p {
+    font-size: 18px;
+    margin: 10px;
+}
+
+.contact a {
+    color: #263c58;
+    font-weight: bold;
+}
+
+/* 하단 */
+footer {
+    background: #172b43;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+    nav {
+        gap: 12px;
+        padding: 13px 8px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 16px;
+        padding: 0 15px;
+    }
+
+    .section-title {
+        font-size: 27px;
+    }
+
+    .book-info {
+        grid-template-columns: 1fr;
+    }
+
+    .disciples-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    section {
+        padding: 55px 5%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 상단 메뉴 -->
+<nav>
+    <a href="#overview">개요</a>
+    <a href="#old-testament">구약</a>
+    <a href="#new-testament">신약</a>
+    <a href="#prayer">기도문</a>
+    <a href="#contact">문의하기</a>
+</nav>
+
+<!-- 메인 화면 -->
+<header class="hero">
+    <h1>최고의 진리 <span class="highlight">성경</span>을 알려드립니다!</h1>
+    <p>
+        하나님의 약속과 사랑이 담긴 말씀,
+        성경을 통해 참된 진리를 알아보세요.
+    </p>
+</header>
+
+<!-- 개요 -->
+<section id="overview" class="overview">
+    <h2 class="section-title">성경이란 무엇일까요?</h2>
+    <p>
+        성경은 하나님의 약속과 사랑을 기록한 책입니다.
+        구약과 신약으로 이루어져 있으며,
+        하나님께서 인류에게 주신 약속과 그 성취의 이야기를 담고 있습니다.
+        성경을 통해 하나님의 뜻과 참된 진리를 배울 수 있습니다.
+    </p>
+</section>
+
+<!-- 구약 -->
+<section id="old-testament">
+    <h2 class="section-title">구약 성경</h2>
+    <div class="book-info">
+        <div class="book-card">
+            <h3>📜 구약 39권</h3>
+            <p>
+                하나님께서 이스라엘 백성과 맺으신 약속,
+                창조와 율법, 역사, 시와 지혜,
+                선지자들의 예언을 기록하고 있습니다.
+            </p>
+        </div>
+
+        <div class="book-card">
+            <h3>✨ 구약의 핵심</h3>
+            <p>
+                하나님께서 보내실 구원자에 대한 약속과
+                그분을 기다리는 믿음의 이야기를 담고 있습니다.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- 신약 -->
+<section id="new-testament">
+    <h2 class="section-title">예수님과 열두 제자</h2>
+
+    <div class="disciples-grid">
+
+        <div class="person-card">
+            <div class="symbol">✝️</div>
+            <h3>예수님</h3>
+            <p>하나님의 아들, 사랑과 구원의 말씀을 전하신 분</p>
+        </div>
+
+        <div class="person-card">
+            <div class="symbol">🌊</div>
+            <h3>베드로</h3>
+            <p>열정적인 제자, 교회의 기초가 된 사도</p>
+        </div>
+
+        <div class="person-card">
+            <div class="symbol">📖</div>
+            <h3>안드레</h3>
+            <p>사람들을 예수님께 인도한 제자</p>
+        </div>
+
+        <div class="person-card">
+            <div class="symbol">⚡</div>
+            <h3>야고보</h3>
+            <p>요한의 형제, 열정적인 사도</p>
+        </div>
+
+        <div class="person-card">
+            <div class="symbol">🕊️</div>
+            <h3>요한</h3>
+            <p>사랑의 사도, 복음서를 기록한 제자</p>
+        </div>
+
+        <div class="person-card">
+            <div class="symbol">🌿</div>
+            <h3>빌립</h3>
+            <p>예수님을 전하고 사람들을 인도한 제자</p>
+        </div>
+
+        <div class="person-card">
+            <div class="symbol">🔍</div>
+            <h3>바돌로매</h3>
+            <p>나다나엘로도 알려진 정직한 제자</p>
+        </div>
+
+        <div class="person-card">
+            <div class="symbol">💬</div>
+            <h3>마태</h3>
+            <p>세리 출신, 마태복음을 기록한 사도</p>
+        </div>
+
+        <div class="person-card">
+            <div class="symbol">🌟</div>
+            <h3>도마</h3>
+            <p>의문을 가지고 확인한 후 믿음을 고백한 제자</p>
+        </div>
+
+        <div class="person-card">
+            <div class="symbol">🙏</div>
+            <h3>야고보(알패오의 아들)</h3>
+            <p>열두 제자 중 한 사람</p>
+        </div>
+
+        <div class="person-card">
+            <div class="symbol">❤️</div>
+            <h3>다대오</h3>
+            <p>유다(야고보의 아들)로도 불리는 제자</p>
+        </div>
+
+        <div class="person-card">
+            <div class="symbol">🌱</div>
+            <h3>시몬(가나안인)</h3>
+            <p>열심당원으로 불리는 열두 제자 중 한 사람</p>
+        </div>
+
+        <div class="person-card">
+            <div class="symbol">🪙</div>
+            <h3>가룟 유다</h3>
+            <p>예수님을 배반한 제자</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- 기도문 -->
+<section id="prayer" class="prayer">
+    <h2 class="section-title">기도문</h2>
+    <div class="prayer-box">
+        하나님 아버지,<br><br>
+        저희에게 귀한 말씀을 허락해 주셔서 감사합니다.<br>
+        성경을 통해 하나님의 뜻을 깨닫고<br>
+        진리 안에서 살아갈 수 있도록 인도해 주세요.<br><br>
+        예수님의 이름으로 기도드립니다. 아멘.
+    </div>
+</section>
+
+<!-- 문의하기 -->
+<section id="contact" class="contact">
+    <h2 class="section-title">문의하기</h2>
+    <p>성경과 말씀에 대해 더 알고 싶으신가요?</p>
+    <p>궁금한 점이 있다면 문의해 주세요.</p>
+    <p>이메일: <a href="mailto:example@email.com">example@email.com</a></p>
+</section>
+
+<footer>
+    <p>© 2026 성경 진리 안내 페이지</p>
+    <p>하나님의 말씀과 약속을 알아가는 시간</p>
+</footer>
+
+</body>
+</html>
